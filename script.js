@@ -6,6 +6,7 @@ const eraser = document.getElementById('eraser')
 alert("please use grid size less than 50!")
 
 btn.addEventListener('click', () =>{
+    container.innerHTML = ''
     setUpGrid(document.getElementById('inputText').value)
 })
 
