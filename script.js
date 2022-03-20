@@ -49,5 +49,6 @@ function eraseDiv(){
     div.array.forEach(element => {      
         element.target.style.backgroundColor = 'lightblue'
     });
+    
 }
 
