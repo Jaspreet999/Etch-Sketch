@@ -1,9 +1,11 @@
 let mouse = false
+let color = "red"
 
 const btn = document.getElementById('btn')
 let container = document.getElementById("container")
 const remove = document.getElementById('delete')
 const eraser = document.getElementById('eraser')
+const paint = document.getElementById('paint')
 
 alert("please use grid size less than 50!")
 
@@ -12,16 +14,22 @@ btn.addEventListener('click', () =>{
     setUpGrid(document.getElementById('inputText').value)
 })
 
-remove.addEventListener('click', ()=>(
+remove.addEventListener('click', ()=>{
     container.innerHTML = ''
-))
+    setUpGrid(document.getElementById('inputText').value)
+})
 
 eraser.addEventListener('click', ()=>{
     
-    container.innerHTML = ''
-    setUpGrid(document.getElementById('inputText').value)
-    
+    color = "lightblue"
+      
 })
+
+paint.addEventListener('click',()=>{
+    mouse = false
+    color = "red"
+})
+
 
 container.addEventListener('mousedown',()=>(
     mouse = true
@@ -35,7 +43,7 @@ container.addEventListener('mouseup',()=>(
 
 function changeColor(element){
     if(mouse == true){
-        element.target.style.backgroundColor = 'red'
+        element.target.style.backgroundColor = color
     }
 }
 
